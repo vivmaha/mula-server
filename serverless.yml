@@ -1,0 +1,13 @@
+service: mula-server
+
+package:
+  exclude:
+    - ./**
+  include:
+    - ./build/**
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: dev
+  region: us-west-2

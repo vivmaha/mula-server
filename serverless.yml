@@ -11,3 +11,17 @@ provider:
   runtime: nodejs10.x
   stage: dev
   region: us-west-2
+
+resources:
+  Resources:
+    UserPool:
+      Type: AWS::Cognito::UserPool
+    UserPoolClient:
+      Type: AWS::Cognito::UserPoolClient
+      Properties:
+        UserPoolId: !Ref UserPool
+    UserPoolDomain:
+      Type: AWS::Cognito::UserPoolDomain
+      Properties:
+        UserPoolId: !Ref UserPool
+        Domain: ${self:service}-${opt:stage}

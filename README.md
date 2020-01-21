@@ -3,7 +3,9 @@ Todo
 
 # Deployment 
 
-`npm run deploy` deploys the app.
+`npm run deploy` deploys the app to the dev environment. 
+
+`npm run deploy -- --state prod` deploys to prod.
 
 `npm run package` generates the deployment package.
 
